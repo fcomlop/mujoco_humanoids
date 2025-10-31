@@ -105,6 +105,7 @@
         fullinertia="0.20105075811 0.08411496729 0.2318908414 0.00023244734 0.0040167728 -0.00087206649"/>
       <geom class="visual" material="white" mesh="base_link"/>
       <geom material="white" mesh="base_link_collision" class="collision"/>
+      <site name="BODY_25:MidHip" type="sphere" size=".01" pos="-0.02 0 -0.27105" rgba="1 0 1 1" group="0"/>
       <body name="torso_1_link" pos="0 0 0.0722">
         <inertial pos="0.00078223 3.528e-05 -0.0178246" quat="0.703744 0.704233 0.0663452 -0.0663278" mass="2.29466"
           diaginertia="0.00639091 0.00622386 0.00410256"/>
@@ -134,8 +135,11 @@
               <geom class="visual" material="white" mesh="head_2_default"/>
               <geom material="white" mesh="head_2_default_collision" class="collision"/>
               <geom pos="0.0621 0.0375 0.1832" class="visual" mesh="orbbec" material="black"/>
+              <site name="BODY_25:LEye" type="sphere" size=".01" pos="0.0621 0.025 0.1832" rgba="0 1 0 1" group="0"/>
+              <site name="BODY_25:REye" type="sphere" size=".01" pos="0.0621 -0.025 0.1832" rgba="0 0 1 1" group="0"/>
             </body>
           </body>
+          <site name="BODY_25:Neck" type="sphere" size=".01" pos="0.00493 0 0.27873" rgba="1 0 1 1" group="0"/>
           <body name="arm_left_1_link" pos="0 0.1575 0.232">
             <inertial pos="-0.0002762 0.100602 0.0443742" quat="0.509187 0.520076 -0.492016 0.477671" mass="2.71457"
               diaginertia="0.0135919 0.012374 0.00418528"/>
@@ -146,6 +150,7 @@
               <inertial pos="0.0143883 0.00092938 -0.0868427" quat="0.981914 0.00964503 0.164999 0.0923476"
                 mass="2.42509" diaginertia="0.0140925 0.0138001 0.00368288"/>
               <joint name="arm_left_2_joint" axis="1 0 0" range="0.00872665 2.87107" actuatorfrcrange="-100 100"/>
+              <site name="BODY_25:LShoulder" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
               <geom class="visual" mesh="l_arm_2" material="black"/>
               <geom mesh="l_arm_2c" class="collision" material="black"/>
               <body name="arm_left_3_link">
@@ -158,6 +163,7 @@
                   <inertial pos="-0.00810404 -0.0194433 -0.0332924" quat="0.428586 -0.11894 0.057285 0.893804"
                     mass="0.815675" diaginertia="0.00326211 0.002924 0.00111543"/>
                   <joint name="arm_left_4_joint" axis="0 1 0" range="-2.23402 -0.00349066" actuatorfrcrange="-70 70"/>
+                  <site name="BODY_25:LElbow" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
                   <geom class="visual" mesh="l_arm_4" material="black"/>
                   <geom mesh="l_arm_4c" class="collision" material="black"/>
                   <body name="arm_left_5_link" pos="-0.02 0 -0.2643">
@@ -170,6 +176,7 @@
                       <inertial pos="2.1e-05 -0.001965 -0.000591" quat="0.0104356 0.706678 0.0122672 0.707352"
                         mass="0.40931" diaginertia="0.000154 0.000141 0.000107"/>
                       <joint name="arm_left_6_joint" axis="1 0 0" range="-1.37008 1.37008" actuatorfrcrange="-8 8"/>
+                      <site name="BODY_25:LWrist" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
                       <geom class="visual" material="white" mesh="l_arm_6"/>
                       <geom material="white" mesh="l_arm_6c" class="collision"/>
                       <body name="arm_left_7_link">
@@ -254,6 +261,7 @@
               <inertial pos="0.0143883 -0.00092938 -0.0868427" quat="0.981914 -0.00964503 0.164999 -0.0923476"
                 mass="2.42509" diaginertia="0.0140925 0.0138001 0.00368288"/>
               <joint name="arm_right_2_joint" axis="1 0 0" range="-2.87107 -0.00872665" actuatorfrcrange="-100 100"/>
+              <site name="BODY_25:RShoulder" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
               <geom class="visual" mesh="r_arm_2" material="black"/>
               <geom mesh="r_arm_2c" class="collision" material="black"/>
               <body name="arm_right_3_link">
@@ -266,6 +274,7 @@
                   <inertial pos="-0.00810404 -0.0194433 -0.0332924" quat="0.428586 -0.11894 0.057285 0.893804"
                     mass="0.815675" diaginertia="0.00326211 0.002924 0.00111543"/>
                   <joint name="arm_right_4_joint" axis="0 1 0" range="-2.23402 -0.00349066" actuatorfrcrange="-70 70"/>
+                  <site name="BODY_25:RElbow" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
                   <geom class="visual" mesh="r_arm_4" material="black"/>
                   <geom mesh="r_arm_4c" class="collision" material="black"/>
                   <body name="arm_right_5_link" pos="-0.02 0 -0.2643">
@@ -278,6 +287,7 @@
                       <inertial pos="2.1e-05 0.001965 -0.000591" quat="-0.0104356 0.706678 -0.0122672 0.707352"
                         mass="0.40931" diaginertia="0.000154 0.000141 0.000107"/>
                       <joint name="arm_right_6_joint" axis="1 0 0" range="-1.37008 1.37008" actuatorfrcrange="-8 8"/>
+                      <site name="BODY_25:RWrist" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
                       <geom class="visual" material="white" mesh="r_arm_6"/>
                       <geom material="white" mesh="r_arm_6c" class="collision"/>
                       <body name="arm_right_7_link">
@@ -367,6 +377,7 @@
           <inertial pos="-0.00704703 0.0259266 0.00273385" quat="0.712294 0.701399 -0.00472331 -0.0255805"
             mass="1.49095" diaginertia="0.00497732 0.00474343 0.00189918"/>
           <joint name="leg_left_2_joint" axis="1 0 0" range="-0.5236 0.5236" actuatorfrcrange="-160 160"/>
+          <site name="BODY_25:LHip" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
           <geom class="visual" mesh="l_hip_x_lo_res" material="black"/>
           <geom mesh="l_hip_x_collision" class="collision" material="black"/>
           <body name="leg_left_3_link">
@@ -379,6 +390,7 @@
               <inertial pos="0.0131772 0.0291751 -0.115946" quat="0.999357 0.00773677 -0.0135107 0.0322952"
                 mass="3.75995" diaginertia="0.0429266 0.0359662 0.013621"/>
               <joint name="leg_left_4_joint" axis="0 1 0" range="0 2.618" actuatorfrcrange="-400 400"/>
+              <site name="BODY_25:LKnee" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
               <geom class="visual" mesh="l_knee_lo_res" material="black"/>
               <geom mesh="l_knee_collision" class="collision" material="black"/>
               <body name="leg_left_5_link" pos="0 0 -0.325">
@@ -391,6 +403,7 @@
                   <inertial pos="-0.0201699 -0.000510665 -0.0602836" quat="0.343485 0.610901 0.618186 0.3559"
                     mass="1.61177" diaginertia="0.00773279 0.006503 0.00387932"/>
                   <joint name="leg_left_6_joint" axis="1 0 0" range="-0.5236 0.5236" actuatorfrcrange="-100 100"/>
+                  <site name="BODY_25:LAnkle" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
                   <geom class="visual" rgba="0.7 0.7 0.7 1" mesh="l_ankle_X_lo_res"/>
                   <geom class="collision" contype="6" type="box" size=".1 .06 .006" pos="-0.005 0 -.1"/>
                   <site name="left_foot" pos="0 0 -0.1"/>
@@ -410,6 +423,7 @@
           <inertial pos="-0.00704703 -0.0259266 0.00273385" quat="0.701399 0.712294 0.0255805 0.00472331" mass="1.49095"
             diaginertia="0.00497732 0.00474343 0.00189918"/>
           <joint name="leg_right_2_joint" axis="1 0 0" range="-0.5236 0.5236" actuatorfrcrange="-160 160"/>
+          <site name="BODY_25:RHip" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
           <geom class="visual" mesh="r_hip_x_lo_res" material="black"/>
           <geom mesh="r_hip_x_collision" class="collision" material="black"/>
           <body name="leg_right_3_link">
@@ -422,6 +436,7 @@
               <inertial pos="0.0131772 -0.0291751 -0.115946" quat="0.999357 -0.00773677 -0.0135107 -0.0322952"
                 mass="3.75995" diaginertia="0.0429266 0.0359662 0.013621"/>
               <joint name="leg_right_4_joint" axis="0 1 0" range="0 2.618" actuatorfrcrange="-400 400"/>
+              <site name="BODY_25:RKnee" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
               <geom class="visual" mesh="r_knee_lo_res" material="black"/>
               <geom mesh="r_knee_collision" class="collision" material="black"/>
               <body name="leg_right_5_link" pos="0 0 -0.325">
@@ -434,6 +449,7 @@
                   <inertial pos="-0.0201699 0.000510665 -0.0602836" quat="0.3559 0.618186 0.610901 0.343485"
                     mass="1.61177" diaginertia="0.00773279 0.006503 0.00387932"/>
                   <joint name="leg_right_6_joint" axis="1 0 0" range="-0.5236 0.5236" actuatorfrcrange="-100 100"/>
+                  <site name="BODY_25:RAnkle" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1" group="0"/>
                   <geom class="visual" rgba="0.7 0.7 0.7 1" mesh="r_ankle_X_lo_res"/>
                   <geom class="collision" contype="6" type="box" size=".1 .06 .006" pos="-0.005 0 -.1"/>
                   <site name="right_foot" pos="0 0 -0.1"/>

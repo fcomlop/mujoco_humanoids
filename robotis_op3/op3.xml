@@ -58,7 +58,7 @@
     <mesh scale="0.001 0.001 0.001"/>
     <geom type="mesh" solref=".004 1"/>
     <joint damping="1.084" armature="0.045" frictionloss="0.03"/>
-    <site group="5" type="sphere"/>
+    <site group="0" type="sphere"/>
     <position kp="21.1" ctrlrange="-3.141592 3.141592" forcerange="-5 5"/>
     <default class="collision">
       <geom group="3"/>
@@ -84,12 +84,16 @@
       <geom mesh="body3c" class="collision"/>
       <geom mesh="body4c" class="collision"/>
       <site name="torso"/>
+      <site name="BODY_25:MidHip" type="sphere" size=".005" pos="0 0 0" rgba="1 0 0 1"/>
+      <site name="BODY_25:Neck" type="sphere" size=".005" pos="0 0 0.111" rgba="1 0 0 1"/>
       <body name="head_pan_link" pos="-0.001 0 0.1365">
         <inertial pos="0.00233 0 0.00823" quat="0.663575 0.663575 0.244272 -0.244272" mass="0.01176"
           diaginertia="4.23401e-06 3.60599e-06 1.65e-06"/>
         <joint name="head_pan" axis="0 0 1"/>
         <geom mesh="h1" class="visual"/>
         <geom mesh="h1c" class="collision"/>
+        <site name="BODY_25:LEye" type="sphere" size=".005" pos="0.032 0.022 0.088" rgba="1 1 0 1"/>
+        <site name="BODY_25:REye" type="sphere" size=".005" pos="0.032 -0.022 0.088" rgba="1 0 1 1"/>
         <body name="head_tilt_link" pos="0.01 0.019 0.0285">
           <inertial pos="0.0023 -0.01863 0.0277" quat="0.997312 0.00973825 0.0726131 -0.00102702" mass="0.13631"
             diaginertia="0.000107452 8.72266e-05 4.39413e-05"/>
@@ -106,6 +110,7 @@
         <inertial pos="0 0.00823 -0.00233" quat="0.244272 0.663575 0.244272 0.663575" mass="0.01176"
           diaginertia="4.23401e-06 3.60599e-06 1.65e-06"/>
         <joint name="l_sho_pitch" axis="0 1 0"/>
+        <site name="BODY_25:LShoulder" type="sphere" size=".005" pos="0 0 0" rgba="1 0 0 1"/>
         <geom mesh="la1" class="visual"/>
         <geom mesh="la1c" class="collision"/>
         <body name="l_sho_roll_link" pos="0.019 0.0285 -0.01">
@@ -118,6 +123,8 @@
             <inertial pos="-0.019 0.07033 0.0038" quat="0.483289 0.51617 -0.51617 0.483289" mass="0.04127"
               diaginertia="6.8785e-05 6.196e-05 1.2065e-05"/>
             <joint name="l_el" axis="1 0 0"/>
+            <site name="BODY_25:LElbow" type="sphere" size=".005" pos="-0.019 0 0" rgba="1 0 0 1"/>
+            <site name="BODY_25:LWrist" type="sphere" size=".005" pos="-0.019 0.145 0" rgba="1 0 0 1"/>
             <geom mesh="la3" class="visual"/>
             <geom mesh="la3c" class="collision"/>
           </body>
@@ -127,6 +134,7 @@
         <inertial pos="0 -0.00823 -0.00233" quat="-0.244272 0.663575 -0.244272 0.663575" mass="0.01176"
           diaginertia="4.23401e-06 3.60599e-06 1.65e-06"/>
         <joint name="r_sho_pitch" axis="0 -1 0"/>
+        <site name="BODY_25:RShoulder" type="sphere" size=".005" pos="0 0 0" rgba="1 0 0 1"/>
         <geom mesh="ra1" class="visual"/>
         <geom mesh="ra1c" class="collision"/>
         <body name="r_sho_roll_link" pos="0.019 -0.0285 -0.01">
@@ -139,6 +147,8 @@
             <inertial pos="-0.019 -0.07033 0.0038" quat="0.51617 0.483289 -0.483289 0.51617" mass="0.04127"
               diaginertia="6.8785e-05 6.196e-05 1.2065e-05"/>
             <joint name="r_el" axis="1 0 0"/>
+            <site name="BODY_25:RElbow" type="sphere" size=".005" pos="-0.019 0 0" rgba="1 0 0 1"/>
+            <site name="BODY_25:RWrist" type="sphere" size=".005" pos="-0.019 -0.145 0" rgba="1 0 0 1"/>
             <geom mesh="ra3" class="visual"/>
             <geom mesh="ra3c" class="collision"/>
           </body>
@@ -148,6 +158,7 @@
         <inertial pos="-0.00157 0 -0.00774" quat="0.499041 0.500957 0.500957 0.499041" mass="0.01181"
           diaginertia="4.3e-06 4.12004e-06 1.50996e-06"/>
         <joint name="l_hip_yaw" axis="0 0 -1"/>
+        <site name="BODY_25:LHip" type="sphere" size=".005" pos="0 0 0" rgba="1 0 0 1"/>
         <geom mesh="ll1" class="visual"/>
         <geom mesh="ll1c" class="collision"/>
         <body name="l_hip_roll_link" pos="-0.024 0 -0.0285">
@@ -165,12 +176,14 @@
             <body name="l_knee_link" pos="0 0 -0.11015">
               <inertial pos="0 -0.02151 -0.055" mass="0.04015" diaginertia="3.715e-05 2.751e-05 1.511e-05"/>
               <joint name="l_knee" axis="0 1 0"/>
+              <site name="BODY_25:LKnee" type="sphere" size=".005" pos="0 -0.019 0" rgba="1 0 0 1"/>
               <geom mesh="ll4" class="visual"/>
               <geom mesh="ll4c" class="collision"/>
               <body name="l_ank_pitch_link" pos="0 0 -0.11">
                 <inertial pos="-0.02022 -0.01872 0.01214" quat="0.490852 0.502657 0.507842 0.498494" mass="0.17886"
                   diaginertia="0.000125243 0.000108598 4.65693e-05"/>
                 <joint name="l_ank_pitch" axis="0 -1 0"/>
+                <site name="BODY_25:LAnkle" type="sphere" size=".005" pos="0 -0.019 0" rgba="1 0 0 1"/>
                 <geom mesh="ll5" class="visual"/>
                 <geom mesh="ll5c" class="collision"/>
                 <body name="l_ank_roll_link" pos="-0.0241 -0.019 0">
@@ -191,6 +204,7 @@
         <inertial pos="-0.00157 0 -0.00774" quat="0.499041 0.500957 0.500957 0.499041" mass="0.01181"
           diaginertia="4.3e-06 4.12004e-06 1.50996e-06"/>
         <joint name="r_hip_yaw" axis="0 0 -1"/>
+        <site name="BODY_25:RHip" type="sphere" size=".005" pos="0 0 0" rgba="1 0 0 1"/>
         <geom mesh="rl1" class="visual"/>
         <geom mesh="rl1c" class="collision"/>
         <body name="r_hip_roll_link" pos="-0.024 0 -0.0285">
@@ -208,12 +222,14 @@
             <body name="r_knee_link" pos="0 0 -0.11015">
               <inertial pos="0 0.02151 -0.055" mass="0.04015" diaginertia="3.715e-05 2.751e-05 1.511e-05"/>
               <joint name="r_knee" axis="0 -1 0"/>
+              <site name="BODY_25:RKnee" type="sphere" size=".005" pos="0 0.019 0" rgba="1 0 0 1"/>
               <geom mesh="rl4" class="visual"/>
               <geom mesh="rl4c" class="collision"/>
               <body name="r_ank_pitch_link" pos="0 0 -0.11">
                 <inertial pos="-0.02022 0.01872 0.01214" quat="0.498494 0.507842 0.502657 0.490852" mass="0.17886"
                   diaginertia="0.000125243 0.000108598 4.65693e-05"/>
                 <joint name="r_ank_pitch" axis="0 1 0"/>
+                <site name="BODY_25:RAnkle" type="sphere" size=".005" pos="0 0.019 0" rgba="1 0 0 1"/>
                 <geom mesh="rl5" class="visual"/>
                 <geom mesh="rl5c" class="collision"/>
                 <body name="r_ank_roll_link" pos="-0.0241 0.019 0">

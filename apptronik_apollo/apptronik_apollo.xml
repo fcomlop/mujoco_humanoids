@@ -87,6 +87,7 @@
             <joint name="floating_base" type="free" limited="false" actuatorfrclimited="false"/>
             <geom class="visual_light" mesh="pelvis_link"/>
             <geom name="collision_capsule_body_pelvis" size="0.1 0.09" pos="-0.06 0 -0.08" quat="0.707388 0.706825 0 0" type="capsule" class="collision"/>
+            <site name="BODY_25:MidHip" type="sphere" size=".01" pos="-0.02 0 -0.16875" rgba="1 0 0 1"/>
             <body name="torso_roll_link" pos="0.03 0 0.03125">
                 <inertial pos="-0.0337439 7.47864e-09 -0.0199137" quat="0.5297 0.511275 -0.470427 0.486532" mass="0.824114" diaginertia="0.00159405 0.00123171 0.000760001"/>
                 <joint name="torso_yaw" axis="0 0 -1" range="-0.829031 0.829031" actuatorfrcrange="-120 120" damping="200" frictionloss="0.7" armature="0.231424"/>
@@ -103,6 +104,8 @@
                         <geom name="collision_cylinder_torso" size="0.16 0.05" pos="-0.045 0 0.2" type="capsule" class="collision"/>
                         <geom class="visual_dark" mesh="neck_mount_fix_link"/>
                         <geom class="visual_dark" mesh="battery_mount_fix"/>
+                        <site name="BODY_25:LEye" type="sphere" size=".01" pos="0.125 0.032 0.55" rgba="1 1 0 1"/>
+                        <site name="BODY_25:REye" type="sphere" size=".01" pos="0.125 -0.032 0.55" rgba="1 0 1 1"/>
                         <body name="neck_yaw_link" pos="-0.0303298 0 0.32841" quat="0.991445 0 0.130526 0">
                             <inertial pos="-0.0110616 0.000438589 0.066541" quat="0.715974 -0.0707674 -0.0795701 0.689958" mass="0.707753" diaginertia="0.00278981 0.002738 0.00071974"/>
                             <joint name="neck_yaw" axis="0 0 1" range="-1.65806 1.65806" actuatorfrcrange="-10.6 10.6" damping="15" frictionloss="0" armature="0.0368"/>
@@ -117,6 +120,7 @@
                                 </body>
                             </body>
                         </body>
+                        <site name="BODY_25:Neck" type="sphere" size=".01" pos="-0.05 0 0.32" rgba="1 0 0 1"/>
                         <body name="l_shoulder_aa_link" pos="-0.05 0.2 0.32">
                             <inertial pos="0.000169922 0.0025177 -0.0190065" quat="0.710165 -0.0144759 0.023056 0.703508" mass="0.0980048" diaginertia="4.61576e-05 3.97046e-05 1.43504e-05"/>
                             <joint name="l_shoulder_aa" axis="1 0 0" range="-0.122173 1.6057" actuatorfrcrange="-78 78" damping="26" frictionloss="2." armature="0.0982771"/>
@@ -124,6 +128,7 @@
                             <body name="l_shoulder_ie_link" pos="0 0 0">
                                 <inertial pos="-0.00799772 0.0154729 -0.0231746" quat="0.0914838 0.586016 -0.671384 0.444364" mass="0.451281" diaginertia="0.00069896 0.000628486 0.000278066"/>
                                 <joint name="l_shoulder_ie" axis="0 0 1" range="-0.471239 0.471239" actuatorfrcrange="-67 67" damping="35" frictionloss="1.48" armature="0.0823104"/>
+                                <site name="BODY_25:LShoulder" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                 <geom class="visual_dark" mesh="l_shoulder_ie_link"/>
                                 <body name="l_shoulder_fe_link" pos="0.0104822 0.03912 0" quat="0.991445 0 0 -0.130526">
                                     <inertial pos="0.00453031 0.00134632 -0.143556" quat="0.707095 0.0140891 -0.00274087 0.706973" mass="3.51271" diaginertia="0.0284589 0.0232812 0.00763948"/>
@@ -135,6 +140,7 @@
                                     <body name="l_elbow_fe_link" pos="0.025 0 -0.315">
                                         <inertial pos="-0.0407636 -0.000100019 -0.0277184" quat="0.446501 0.557407 0.539502 0.445951" mass="0.947642" diaginertia="0.00105876 0.000944065 0.00076124"/>
                                         <joint name="l_elbow_fe" axis="0 1 0" range="-2.61799 0.174533" actuatorfrcrange="-114 114" damping="17" frictionloss="2.55" armature="0.102645"/>
+                                        <site name="BODY_25:LElbow" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                         <geom class="visual_dark" mesh="l_elbow_fe_link"/>
                                         <body name="l_wrist_roll_link" pos="-0.04 0 -0.06" quat="0.707105 0 0 0.707108">
                                             <inertial pos="0.0088493 0.000434657 -0.071867" quat="0.701782 -0.0503482 -0.0435035 0.709278" mass="0.694478" diaginertia="0.00294512 0.00284275 0.000723985"/>
@@ -144,6 +150,7 @@
                                             <body name="l_wrist_yaw_link" pos="0.025 0 -0.2">
                                                 <inertial pos="-9.66662e-05 0.000233736 -0.000463806" quat="-0.00178423 0.710542 -0.000426355 0.703652" mass="0.0189001" diaginertia="1.89727e-06 1.24254e-06 1.0322e-06"/>
                                                 <joint name="l_wrist_yaw" axis="1 0 0" range="-0.698 0.698" actuatorfrcrange="-34.2 34.2" damping="3" frictionloss="0" armature="0.00329371"/>
+                                                <site name="BODY_25:LWrist" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                                 <geom class="visual_dark" mesh="l_wrist_yaw_link"/>
                                                 <body name="l_wrist_pitch_link" quat="0.707105 0 0 -0.707108">
                                                     <inertial pos="0.0071177 -0.038442 -0.0669519" quat="0.614861 0.00892233 0.0323416 0.787921" mass="0.806883" diaginertia="0.00459474 0.00452816 0.00206219"/>
@@ -185,6 +192,7 @@
                             <body name="r_shoulder_ie_link" pos="0 0 0">
                                 <inertial pos="-0.00800045 -0.0154894 -0.0231814" quat="0.583857 0.088589 -0.445504 0.672897" mass="0.451079" diaginertia="0.000700361 0.00062725 0.000277886"/>
                                 <joint name="r_shoulder_ie" axis="0 0 1" range="-0.471239 0.471239" actuatorfrcrange="-67 67" damping="35" frictionloss="1.48" armature="0.0823191"/>
+                                <site name="BODY_25:RShoulder" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                 <geom class="visual_dark" mesh="r_shoulder_ie_link"/>
                                 <body name="r_shoulder_fe_link" pos="0.0104822 -0.03912 0" quat="0.991445 0 0 0.130526">
                                     <inertial pos="0.00420186 -0.00125575 -0.142983" quat="0.7032 -0.00225527 0.011754 0.710892" mass="3.50359" diaginertia="0.0282519 0.0230724 0.00763457"/>
@@ -196,6 +204,7 @@
                                     <body name="r_elbow_fe_link" pos="0.025 0 -0.315">
                                         <inertial pos="-0.0407591 0.000134025 -0.0277185" quat="0.458533 0.527215 0.568785 0.433907" mass="0.947653" diaginertia="0.00105948 0.000943838 0.000761313"/>
                                         <joint name="r_elbow_fe" axis="0 1 0" range="-2.61799 0.174533" actuatorfrcrange="-114 114" damping="17" frictionloss="2.55" armature="0.102645"/>
+                                        <site name="BODY_25:RElbow" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                         <geom class="visual_dark" mesh="r_elbow_fe_link"/>
                                         <body name="r_wrist_roll_link" pos="-0.04 0 -0.06" quat="0.707105 0 0 -0.707108">
                                             <inertial pos="0.00887138 -0.000263913 -0.0718159" quat="0.698707 -0.0449538 -0.0486448 0.712336" mass="0.695137" diaginertia="0.00294733 0.00284457 0.000724756"/>
@@ -205,6 +214,7 @@
                                             <body name="r_wrist_yaw_link" pos="0.025 0 -0.2" quat="1.32679e-06 0 0 -1">
                                                 <inertial pos="9.66662e-05 0.000233736 -0.000463806" quat="-0.00044002 0.703652 -0.00179716 0.710542" mass="0.0189001" diaginertia="1.89727e-06 1.24254e-06 1.0322e-06"/>
                                                 <joint name="r_wrist_yaw" axis="1 0 0" range="-0.698 0.698" actuatorfrcrange="-34.2 34.2" damping="3" frictionloss="0" armature="0.0032937"/>
+                                                <site name="BODY_25:RWrist" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                                 <geom class="visual_dark" mesh="r_wrist_yaw_link"/>
                                                 <body name="r_wrist_pitch_link" quat="0.707105 0 0 -0.707108">
                                                     <inertial pos="0.0181202 0.0388729 -0.0688824" quat="0.630263 -0.0221958 -0.0501406 0.774443" mass="0.806683" diaginertia="0.00526208 0.00452156 0.0026899"/>
@@ -245,6 +255,7 @@
             <body name="l_hip_ie_link" pos="-0.02 0.11 -0.16875" quat="0.957662 0.126078 -0.256605 0.0337826">
                 <inertial pos="-0.0275726 0.000155527 0.0265849" quat="-0.0182885 0.43376 -0.029543 0.900358" mass="1.49972" diaginertia="0.00446385 0.00343018 0.00205254"/>
                 <joint name="l_hip_ie" axis="0 0 1" range="-0.567232 1.09083" actuatorfrcrange="-120 120" damping="171" frictionloss="7.95" armature="0.231424"/>
+                <site name="BODY_25:LHip" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                 <geom class="visual_dark" mesh="l_hip_ie_link"/>
                 <body name="l_hip_aa_link" pos="0 0 0">
                     <inertial pos="0.000193883 0.00068757 0.00240456" quat="0.488822 0.400587 -0.484645 0.604733" mass="0.429858" diaginertia="0.000370659 0.000322451 0.000129015"/>
@@ -258,11 +269,13 @@
                         <body name="l_knee_fe_link" pos="-0.05 0 -0.425">
                             <inertial pos="0.043534 0.00505054 -0.152417" quat="0.917057 0.00954505 0.0113608 0.398479" mass="4.57515" diaginertia="0.0639569 0.0630895 0.0108036"/>
                             <joint name="l_knee_fe" axis="0 1 0" range="0 2.61799" actuatorfrcrange="-336 336" damping="46" frictionloss="7.7" armature="0.292264"/>
+                            <site name="BODY_25:LKnee" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                             <geom class="visual_light" mesh="l_knee_fe_link"/>
                             <geom name="collision_capsule_body_l_shin" size="0.071 0.15" pos="0.0476 0.0061 -0.19" quat="0.998048 0 0.0624593 0" type="capsule" class="collision"/>
                             <body name="l_ankle_ie_link" pos="0.05 0 -0.425" quat="0.987672 0.0864102 -0.130029 0.0113761">
                                 <inertial pos="0.00995038 9.93144e-05 0.000832075" quat="0.692933 0.691803 0.145013 -0.14221" mass="0.12478" diaginertia="4.80038e-05 4.18024e-05 1.66067e-05"/>
                                 <joint name="l_ankle_ie" axis="1 0 0" range="-0.654498 0.305433" actuatorfrcrange="-120 120" damping="11" frictionloss="0.89" armature="0.121874"/>
+                                <site name="BODY_25:LAnkle" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                 <geom class="visual_dark" mesh="l_ankle_ie_link"/>
                                 <body name="l_foot_link" quat="0.965926 0 0.258819 0">
                                     <frame pos="0.0614891 -0.00342931 -0.0265273" quat="0.987443 -0.0797175 -0.132426 -0.0326442">
@@ -284,6 +297,7 @@
             <body name="r_hip_ie_link" pos="-0.02 -0.11 -0.16875" quat="0.957662 -0.126078 -0.256605 -0.0337826">
                 <inertial pos="-0.0275542 -0.000156081 0.0265869" quat="0.0347714 0.433956 0.0469856 0.899036" mass="1.49972" diaginertia="0.00446281 0.00343307 0.00204473"/>
                 <joint name="r_hip_ie" axis="0 0 1" range="-1.09083 0.567232" actuatorfrcrange="-120 120" damping="171" frictionloss="7.95" armature="0.231424"/>
+                <site name="BODY_25:RHip" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                 <geom class="visual_dark" mesh="r_hip_ie_link"/>
                 <body name="r_hip_aa_link" pos="0 0 0">
                     <inertial pos="0.000193891 -0.000687548 0.00240456" quat="0.469753 0.583843 -0.513458 0.418115" mass="0.429858" diaginertia="0.000369398 0.000323696 0.000129031"/>
@@ -297,11 +311,13 @@
                         <body name="r_knee_fe_link" pos="-0.05 0 -0.425">
                             <inertial pos="0.0432854 -0.00516245 -0.152442" quat="0.399848 0.0111994 0.00899692 0.916469" mass="4.57434" diaginertia="0.063915 0.0630953 0.0107961"/>
                             <joint name="r_knee_fe" axis="0 1 0" range="0 2.61799" actuatorfrcrange="-336 336" damping="46" frictionloss="7.7" armature="0.292264"/>
+                            <site name="BODY_25:RKnee" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                             <geom class="visual_light" mesh="r_knee_fe_link"/>
                             <geom name="collision_capsule_body_r_shin" size="0.071 0.15" pos="0.0476 0.0061 -0.19" quat="0.998048 0 0.0624593 0" type="capsule" class="collision"/>
                             <body name="r_ankle_ie_link" pos="0.05 0 -0.425" quat="0.987672 -0.0864102 -0.130029 -0.0113761">
                                 <inertial pos="0.00995037 -9.921e-05 0.000832071" quat="0.69181 0.692928 0.142207 -0.145006" mass="0.12478" diaginertia="4.80035e-05 4.18021e-05 1.66065e-05"/>
                                 <joint name="r_ankle_ie" axis="1 0 0" range="-0.305433 0.654498" actuatorfrcrange="-120 120" damping="11" frictionloss="0.89" armature="0.121874"/>
+                                <site name="BODY_25:RAnkle" type="sphere" size=".01" pos="0 0 0" rgba="1 0 0 1"/>
                                 <geom class="visual_dark" mesh="r_ankle_ie_link"/>
                                 <body name="r_foot_link" quat="0.965926 0 0.258819 0">
                                     <frame pos="0.0614891 0.00342931 -0.0265273" quat="0.987443 0.0797175 -0.132426 0.0326442">
